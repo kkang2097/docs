@@ -1,0 +1,32 @@
+---
+title: 'Link'
+description: 'Building block for LLM chains'
+---
+
+A chain contains links. Similarly, a LLM chain is a chain of ```Link``` objects. Each Link is a step in the RAG/Agent sequence.
+
+## Source
+
+```python link.py
+class Link(BaseModel):
+    #TODO: Add union type for Union(Context | dict[str, Any])
+    context: T 
+
+    @abstractmethod
+    def forward(self):
+        '''
+            Main method for executing the Link in the LLM chain
+        '''
+        pass
+
+    async def a_forward(self):
+        '''
+            Main method for executing the Link in the LLM chain
+        '''
+        pass
+```
+
+
+## Examples
+
+TODO: Make an example here...

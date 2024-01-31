@@ -3,13 +3,9 @@ title: 'Composition'
 description: 'Utils for chaining async functions'
 ---
 
-
-# Composition
-
 The most important part of AgentLite. By chaining ```Link``` objects together, we can create a LLM chain.
 
 ## Source
-
 
 ```python composition.py
 def apipe(*functions):
@@ -17,10 +13,9 @@ def apipe(*functions):
 ```
 
 ## Example
+
 Let's try chaining some example functions here.
 ```python
-
-#TODO: Testing Grounds
 async def plus1(x):
     print("PLEASE")
     print(x)

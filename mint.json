@@ -26,26 +26,12 @@
     "url": "https://dashboard.mintlify.com"
   },
   "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference"
-    }
   ],
   "anchors": [
     {
       "name": "Documentation",
       "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "url": "https://agentlite.mintlify.app/"
     }
   ],
   "navigation": [
@@ -60,22 +46,19 @@
     {
       "group": "Essentials",
       "pages": [
-        "essentials/code",
-        "essentials/composition"
+        "essentials/composition",
+        "essentials/context",
+        "essentials/link",
+        "essentials/logger",
+        "essentials/model",
+        "essentials/prompt",
+        "essentials/tool"
       ]
     },
     {
-      "group": "API Documentation",
+      "group": "Compatibility",
       "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "compatibility/llamaindex"
       ]
     }
   ],
