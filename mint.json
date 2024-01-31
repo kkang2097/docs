@@ -61,10 +61,7 @@
       "group": "Essentials",
       "pages": [
         "essentials/code",
-        "essentials/composition",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "essentials/composition"
       ]
     },
     {
