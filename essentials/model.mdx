@@ -7,13 +7,61 @@ A ```Model``` generates output for the user. This abstraction is optional, as th
 
 ## Source 
 
-Create a link to the source code
+```python model.py 
+class LLM(BaseModel):
+    async_session: Optional[aiohttp.ClientSession] = None
+    http_session: Optional[requests.Session] = None
+    api_key: Optional[str] = ""
+    llm_args: Optional[dict[str, A]] = {}
+
+    class Config:
+        arbitrary_types_allowed = True
+
+    @abstractmethod 
+    def predict(query: str, message_history: Optional[list[M]] = []) -> str:
+        pass
+
+    @abstractmethod
+    async def async_predict(query: str, message_history: Optional[list[M]] = []) -> str:
+        pass
+```
 
 ## Example 
 
-Creating a ```Model``` abstraction based on calls to OpenAI's GPT models. TODO: Create a link to the source code
+Creating a ```Model``` abstraction based on calls to OpenAI's GPT models.
 
 
 
 ```python
+class OpenAIModel(LLM):
+    '''
+        Example LLM using OpenAI's GPT models
+    '''
+    
+    def predict(self, query: str, message_history: Optional[list[M]] = []) -> str:
+        #Make curl request to OpenAI endpoint
+        headers = {"Authorization": f"Bearer {self.api_key}"}  
+        prompt = {'role': 'user', 'content': query}
+        response = self.http_session.post(
+            'https://api.openai.com/v1/chat/completions', headers=headers, json={**self.llm_args,
+                                                                                 'messages': message_history + [prompt]}
+        )
+        response.raise_for_status()
+        message_history.append(prompt)
+        response_str = response.json()["choices"][0]["message"]["content"].strip()
+        message_history.append({'role': 'user', 'content': response_str})
+        return response_str
+    
+    async def async_predict(self, query: str, message_history: Optional[list[M]] = []) -> str:
+        #Make curl request to OpenAI endpoint
+            headers = {"Authorization": f"Bearer {self.api_key}"}  
+            prompt = {'role': 'user', 'content': query}
+            response = await self.async_session.post(
+            'https://api.openai.com/v1/chat/completions', headers=headers, json ={**self.llm_args,
+                                                                                    'messages': message_history + [prompt]}
+            )
+            message_history.append(prompt)
+            response_str =  (await response.json())["choices"][0]["message"]["content"].strip()
+            message_history.append({'role': 'user', 'content': response_str})
+            return response_str
 ```

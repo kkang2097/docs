@@ -6,7 +6,16 @@ Another optional module. There are some template prompts and a simple ```Prompt`
 
 
 ## Source
-Link to the source here
+
+```python prompt.py 
+from typing import TypeVar, Callable
+
+#Prompt is a type of function that takes arguments and returns a string
+Prompt = Callable[..., str]
+
+def simple_prompt(name: str):
+    return f'Your name is {name}'
+```
 
 
 
