@@ -52,7 +52,8 @@
         "essentials/logger",
         "essentials/model",
         "essentials/prompt",
-        "essentials/tool"
+        "essentials/tool",
+        "essentials/output_parser"
       ]
     },
     {
