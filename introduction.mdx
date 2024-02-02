@@ -1,71 +1,52 @@
 ---
 title: Introduction
-description: 'Welcome to the home of your new documentation'
+description: 'Why this Library Exists -> How to Use This Library'
 ---
 
-<img
-  className="block dark:hidden"
-  src="/images/hero-light.svg"
-  alt="Hero Light"
-/>
-<img
-  className="hidden dark:block"
-  src="/images/hero-dark.svg"
-  alt="Hero Dark"
-/>
+## Inspiration
+I got assigned a take-home coding assignment to use RAG to solve a business use case. I spent 10 hours on the assignment. However, 8 out of 10 hours were spent 
+dealing with the "type gymnastics" of a well-known LLM framework. So I wrote my own. This library hopes to be 
+<ol>
+  <li>Minimal</li>
+  <li>Powerful</li>
+  <li>Composable</li>
+  <li>Functional</li>
+</ol>
 
-## Setting up
+This library is not a 
+<ol>
+  <li>replacement for LlamaIndex</li>
+  <li>hub for data integrations</li>
+  <li>out-of-the-box full service LLM library</li>
+</ol>
 
-The first step to world-class documentation is setting up your editing environments.
+Instead, I hope to arm you all with some basic structure and some functional utilities so you do what you do best: 
+```python 
+innovate() 
+```
 
-<CardGroup cols={2}>
-  <Card
-    title="Edit Your Docs"
-    icon="pen-to-square"
-    href="https://mintlify.com/docs/quickstart"
-  >
-    Get your docs set up locally for easy development
-  </Card>
-  <Card
-    title="Preview Changes"
-    icon="image"
-    href="https://mintlify.com/docs/development"
-  >
-    Preview your changes before you push to make sure they're perfect
-  </Card>
-</CardGroup>
 
-## Make it yours
+## Installation
+You can install the library using the Python package manager, or build from source.
 
-Update your docs to your brand and add valuable content for the best user conversion.
+```bash
+pip install agent-lite
+```
 
-<CardGroup cols={2}>
-  <Card
-    title="Customize Style"
-    icon="palette"
-    href="https://mintlify.com/docs/settings/global"
-  >
-    Customize your docs to your company's colors and brands
-  </Card>
-  <Card
-    title="Reference APIs"
-    icon="code"
-    href="https://mintlify.com/docs/api-playground/openapi"
-  >
-    Automatically generate endpoints from an OpenAPI spec
-  </Card>
-  <Card
-    title="Add Components"
-    icon="screwdriver-wrench"
-    href="https://mintlify.com/docs/components/accordion"
-  >
-    Build interactive features and designs to guide your users
-  </Card>
-  <Card
-    title="Get Inspiration"
-    icon="stars"
-    href="https://mintlify.com/showcase"
-  >
-    Check out our showcase of our favorite documentation
-  </Card>
-</CardGroup>
+AgentLite Github Repo: https://github.com/AgentLite/AgentLite
+
+
+## Usage
+
+AgentLite is for writing chains of RAG/Agent functions using low-level abstractions. It is highly customizable, while having interop with mainstream frameworks like
+LlamaIndex or Langchain. Some highlights:
+<ol>
+  <li>Async Function Chaining</li>
+  <li>Minimal Abstractions</li>
+  <li>More to come(?) Suggestions are welcome</li>
+</ol>
+
+## Support
+
+Currently, AgentLite only supports chains. However, when the literature around autonomous agents becomes more concrete, I plan to release an "as simple as possible" version
+ of LLM agents as possible.
