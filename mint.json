@@ -28,11 +28,6 @@
   "tabs": [
   ],
   "anchors": [
-    {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://agentlite.mintlify.app/"
-    }
   ],
   "navigation": [
     {
